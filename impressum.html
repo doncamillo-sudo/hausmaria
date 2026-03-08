@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum & Datenschutz – Haus Maria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #C89F4B;
+      --gold-light: #e8c96e;
+      --dark: #1a1a18;
+      --charcoal: #2e2e2a;
+      --warm-white: #faf8f3;
+      --mid: #6b6b60;
+      --text: #3a3a32;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; background: var(--warm-white); color: var(--text); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem; height: 68px;
+      background: rgba(26,26,24,0.92); backdrop-filter: blur(8px);
+    }
+    .nav-logo { font-family: 'Lato', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: 0.18em; color: var(--warm-white); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--dark); padding: 0.55rem 1.4rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* PAGE */
+    .page { max-width: 740px; margin: 0 auto; padding: 8rem 2rem 6rem; }
+
+    /* SECTION BLOCK */
+    .legal-block { margin-bottom: 5rem; }
+    .legal-block + .legal-block { border-top: 1px solid rgba(200,159,75,0.2); padding-top: 5rem; }
+
+    .legal-eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.8rem;
+    }
+    .legal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400;
+      color: var(--dark); line-height: 1.2; margin-bottom: 2.5rem;
+    }
+
+    h3 {
+      font-family: 'Lato', sans-serif; font-weight: 700;
+      font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--dark); margin: 2rem 0 0.6rem;
+    }
+    h3:first-of-type { margin-top: 0; }
+
+    p {
+      font-size: 0.93rem; font-weight: 300; line-height: 1.85;
+      color: var(--mid); margin-bottom: 1rem;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .contact-info {
+      background: rgba(200,159,75,0.06);
+      border-left: 2px solid var(--gold);
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 0.92rem; font-weight: 300; line-height: 1.9; color: var(--mid);
+    }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.4); text-align: center; padding: 2.5rem 2rem; font-size: 0.8rem; letter-spacing: 0.05em; line-height: 2; }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 1.2rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="hausmaria.html" class="nav-logo"><span>HAUS</span>MARIA</a>
+    <ul class="nav-links">
+      <li><a href="apartment-maria.html">Apartment Maria</a></li>
+      <li><a href="apartment-johanna.html">Apartment Johanna</a></li>
+    </ul>
+    <a href="kontakt.html" class="nav-cta">Kontakt</a>
+  </nav>
+
+  <div class="page">
+
+    <!-- IMPRESSUM -->
+    <div class="legal-block">
+      <p class="legal-eyebrow">Rechtliches</p>
+      <h1 class="legal-title">Impressum</h1>
+
+      <h3>Verantwortliche</h3>
+      <p>Almut Steckel und Martin Vogels</p>
+
+      <h3>Kontakt</h3>
+      <div class="contact-info">
+        Henchenstr. 13<br>
+        D-56281 Emmelshausen<br>
+        Tel. <a href="tel:+4915111654754">+49 (0)151 1165475</a><br>
+        <a href="mailto:mail@maria.haus">mail@maria.haus</a>
+      </div>
+    </div>
+
+    <!-- DATENSCHUTZ -->
+    <div class="legal-block">
+      <p class="legal-eyebrow">Rechtliches</p>
+      <h2 class="legal-title">Datenschutzhinweise</h2>
+
+      <p>Sie können unsere Websites besuchen, ohne dass wir irgendwelche personenbezogenen Daten von Ihnen benötigen. Wir erfahren nur den Namen Ihres Internet Service Providers, die Website, von der aus Sie uns besuchen, und die einzelnen Seiten, die Sie bei uns besuchen. Nur wenn Sie bestimmte Service-Leistungen (z. B. die Möglichkeit zur Eingabe persönlicher Daten) nutzen, werden persönliche Daten erhoben und verarbeitet. Die Preisgabe dieser Daten seitens des Nutzers geschieht auf ausdrücklich freiwilliger Basis.</p>
+
+      <p>Die gespeicherten Daten werden ausschließlich zu Zwecken der Identifikation und Nachverfolgung unzulässiger Zugriffsversuche und Zugriffe auf den Web-Server verwendet. Die gespeicherten Daten werden für keine anderen Zwecke als für die Datensicherheit verwendet.</p>
+
+      <h3>1. Name und Kontaktdaten des für die Verarbeitung Verantwortlichen</h3>
+      <p>Diese Datenschutzhinweise gelten für die Datenverarbeitung durch:</p>
+      <p>Verantwortliche: Almut Steckel und Martin Vogels, Anschrift: Henchenstr. 13, 56281 Emmelshausen</p>
+
+      <h3>2. Erhebung und Speicherung personenbezogener Daten sowie Art, Zweck und deren Verwendung</h3>
+      <p>Zum Zweck der Anbahnung und Durchführung des Mietvertrages erheben wir über das Anmeldeformular folgende Daten:</p>
+      <p>– Vorname, Nachname, Anschrift<br>– E-Mail-Adresse, Telefonnummer<br>– Korrespondenz im Rahmen des Mietverhältnisses</p>
+      <p>Die Datenverarbeitung ist nach Art. 6 Abs. 1 S. 1 lit. b, f DSGVO zu den genannten Zwecken und für die beidseitige Erfüllung von Verpflichtungen aus dem Mietverhältnis erforderlich.</p>
+      <p>Die personenbezogenen Daten des Mieters werden regelmäßig bis zum Ablauf der gesetzlichen dreijährigen Regelverjährungsfrist (§ 195 BGB) gespeichert und mit Ablauf der Frist gelöscht. Sofern ich nach Artikel 6 Abs. 1 S. 1 lit. c DSGVO aufgrund von steuerrechtlichen Aufbewahrungs- und Dokumentationspflichten zu einer längeren Speicherung verpflichtet bin/sind oder Sie in eine darüber hinaus gehende Speicherung nach Art. 6 Abs. 1 S. 1 lit. a DSGVO eingewilligt haben, sind diese Fristen maßgeblich.</p>
+
+      <h3>3. Weitergabe von Daten an Dritte</h3>
+      <p>Ihre persönlichen Daten werden nicht an andere weitergegeben.</p>
+
+      <h3>4. Betroffenenrechte</h3>
+      <p>Sie haben das Recht eine erteilte Einwilligung zu widerrufen gemäß Art. 7 Abs. 3 DSGVO, Auskunft über die von uns verarbeiteten Daten gemäß Art. 15 DSGVO, die Berichtigung ihrer gespeicherten Datensätze gemäß Art. 17 DSGVO zu verlangen. Außerdem steht Ihnen das Recht auf Einschränkung der Verarbeitung gemäß Art. 18 DSGVO, einer Mitteilung im Zusammenhang mit der Berichtigung oder Löschung personenbezogener Daten oder der Einschränkung der Verarbeitung gemäß Art. 18 DSGVO sowie das Recht auf Datenübertragbarkeit gemäß Art. 20 DSGVO zu. Auch können Sie sich bei einer Aufsichtsbehörde gemäß Art. 77 DSGVO beschweren.</p>
+
+      <h3>5. Widerspruchsrecht</h3>
+      <p>Sofern Ihre personenbezogenen Daten auf Grundlage von berechtigten Interessen gemäß Art. 6 Abs. 1 S. 1 lit. f DSGVO verarbeitet werden, haben Sie das Recht gemäß Art. 21 DSGVO Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten einzulegen, soweit dafür Gründe vorliegen, die sich aus Ihrer besonderen Situation ergeben. Sofern Sie von Ihre Widerspruchsrecht Gebrauch machen, wenden Sie sich bitte an die oben angegebenen Adressen des Verantwortlichen.</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="margin-bottom:0.4rem;"><strong style="color:rgba(255,255,255,0.7)"><span style="color:var(--gold)">HAUS</span>MARIA</strong> · Basselscheider Str. 18 · 56281 Emmelshausen</p>
+    <p>Tel: <a href="tel:+4915111654754">+49 (0)151 11654754</a> · <a href="mailto:mail@maria.haus">mail@maria.haus</a> · <a href="https://www.maria.haus">www.maria.haus</a></p>
+    <p style="margin-top:0.8rem;font-size:0.72rem;opacity:0.5;">© Alle Rechte vorbehalten</p>
+  </footer>
+
+</body>
+</html>

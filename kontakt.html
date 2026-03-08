@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – Haus Maria Emmelshausen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #C89F4B;
+      --gold-light: #e8c96e;
+      --dark: #1a1a18;
+      --charcoal: #2e2e2a;
+      --warm-white: #faf8f3;
+      --mid: #6b6b60;
+      --text: #3a3a32;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; background: var(--dark); color: var(--text); overflow-x: hidden; min-height: 100vh; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem; height: 68px;
+      background: rgba(26,26,24,0.92); backdrop-filter: blur(8px);
+    }
+    .nav-logo { font-family: 'Lato', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: 0.18em; color: var(--warm-white); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--dark); padding: 0.55rem 1.4rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* PAGE */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8rem 2rem 5rem;
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle background texture */
+    .page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c89f4b' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .contact-inner {
+      position: relative;
+      text-align: center;
+      max-width: 720px;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.9s ease forwards 0.2s;
+    }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    .contact-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .contact-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 400;
+      color: var(--warm-white);
+      line-height: 1.15;
+      margin-bottom: 1.8rem;
+    }
+    .contact-title em { font-style: italic; color: var(--gold); }
+
+    .contact-desc {
+      font-size: 0.98rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0 auto 4rem;
+    }
+
+    /* Contact cards */
+    .contact-cards {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 5rem;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .contact-circle {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 2rem;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .contact-circle::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(200,159,75,0.15);
+      transition: opacity 0.3s;
+    }
+    .contact-card:hover .contact-circle {
+      background: rgba(200,159,75,0.1);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(200,159,75,0.15);
+    }
+
+    .contact-card-label {
+      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      font-weight: 300;
+      transition: color 0.2s;
+    }
+    .contact-card:hover .contact-card-label { color: var(--gold); }
+
+    .contact-card-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--warm-white);
+      margin-top: -0.6rem;
+    }
+
+    /* Divider */
+    .contact-divider {
+      width: 1px;
+      height: 100px;
+      background: linear-gradient(to bottom, transparent, rgba(200,159,75,0.3), transparent);
+      align-self: center;
+    }
+
+    /* Payment note */
+    .payment-note {
+      border-top: 1px solid rgba(200,159,75,0.15);
+      padding-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.82rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+    }
+    .payment-note i { color: var(--gold); opacity: 0.6; font-size: 1rem; }
+    .payment-note span + span::before { content: '·'; margin: 0 0.6rem; opacity: 0.4; }
+
+    /* Address block */
+    .address-block {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.08em;
+      line-height: 1.9;
+    }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.3); text-align: center; padding: 2rem; font-size: 0.78rem; letter-spacing: 0.05em; }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 1.2rem; }
+      .nav-links { display: none; }
+      .contact-divider { display: none; }
+      .contact-cards { gap: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="hausmaria.html" class="nav-logo"><span>HAUS</span>MARIA</a>
+    <ul class="nav-links">
+      <li><a href="apartment-maria.html">Apartment Maria</a></li>
+      <li><a href="apartment-johanna.html">Apartment Johanna</a></li>
+    </ul>
+    <a href="kontakt.html" class="nav-cta">Kontakt</a>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="page">
+    <div class="contact-inner">
+
+      <p class="contact-eyebrow">Haus Maria · Emmelshausen</p>
+      <h1 class="contact-title">Kontaktieren<br>Sie <em>uns</em></h1>
+      <p class="contact-desc">Haben Sie Fragen zu unseren Apartments oder einen Reservierungswunsch? Wir sind gerne für Sie da und melden uns schnellstmöglich zurück.</p>
+
+      <div class="contact-cards">
+
+        <a href="mailto:mail@maria.haus" class="contact-card">
+          <div class="contact-circle">
+            <i class="fa-regular fa-envelope"></i>
+          </div>
+          <span class="contact-card-label">E-Mail</span>
+          <span class="contact-card-value">mail@maria.haus</span>
+        </a>
+
+        <div class="contact-divider"></div>
+
+        <a href="tel:+4915111654754" class="contact-card">
+          <div class="contact-circle">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <span class="contact-card-label">Telefon</span>
+          <span class="contact-card-value">+49 (0)151 11654754</span>
+        </a>
+
+      </div>
+
+      <div class="payment-note">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Zahlung per Überweisung</span>
+        <span>oder Bar vor Ort</span>
+      </div>
+
+      <div class="address-block">
+        Basselscheider Str. 18 · 56281 Emmelshausen · <a href="https://www.maria.haus" style="color:rgba(200,159,75,0.4);text-decoration:none;">www.maria.haus</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© Alle Rechte vorbehalten · <a href="impressum.html">Impressum & Datenschutz</a></p>
+  </footer>
+
+</body>
+</html>
